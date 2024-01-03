@@ -17,7 +17,7 @@
         <div><br></div>
         <table style="border: 2px solid black; width: 40% "align = "center">
             <tr><td style="background-color: #6cd2fe;" align="left">แสดงความคินเห็น</td></tr>
-            <tr><td colspan="2"><textarea name="message" cols="69"></textarea></td></tr>
+            <tr><td colspan="2"><textarea name="message" rows="10" cols="69"></textarea></td></tr>
             <tr><th colspan="2"><input type="submit" value="ส่งข้อความ"></th></tr>
         </table>
         <br>
