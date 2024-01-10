@@ -10,10 +10,13 @@
     <hr>
     <form action="verify.php" method="post">
         <table style="border: 2px solid black; width: 40%;" align="center";>
+            
             <tr><td colspan="2" style="background-color: #6cd2fe;">เข้าสู่ระบบ</td></tr>
             <tr><td>Login</td><td><input type="text" name="login" size="50" required></td></tr>
-            <tr><td>Password</td><td><input type="password" name="pwd" size="50" ></td></tr>
-            <tr><th colspan="2"><input type="submit" value="Login"></th></tr>
+            <tr><td>Password</td><td><input type="password" name="pwd" size="50" ></td></tr>        
+            <?php
+                echo"<tr><th colspan=2><input type=submit value=Login></th></tr>";
+            ?>
         </table>
     </form>
     <br>

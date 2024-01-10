@@ -15,15 +15,18 @@
             <option value="general">เรื่องทั่วไป</option>
             <option value="study">เรื่องเรียน</option>
         </select>
-        <a href="login.html" style="float: right;">เข้าสู่ระบบ</a>     
+        <a href="login.php" style="float: right;">เข้าสู่ระบบ</a>     
     </form>
     <ul>
-        <li><a href="post.php?id=1">กระทู้ที่1</a></li>
-        <li><a href="post.php?id=2">กระทู้ที่2</a></li>
-        <li><a href="post.php?id=3">กระทู้ที่3</a></li>
-        <li><a href="post.php?id=4">กระทู้ที่4</a></li>
-        <li><a href="post.php?id=5">กระทู้ที่5</a></li>
+        <?php  
+            $l = 1;
+            while($l <= 10){
+                echo"<li><a href=post.php?id=$l>กระทู้ที่$l</a></li>";
+                $l++;
+            } 
+        ?>
     </ul>
+    
     
     
 </body>

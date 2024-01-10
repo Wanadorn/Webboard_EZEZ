@@ -9,9 +9,19 @@
     <h1 style="text-align: center;">Webboard Wanadorn</h1>
     <hr>
     <div style="text-align: center;">
-        เข้าสู่ระบบด้วย<br>
-        Login = <?php echo $_POST['login']; ?><br>
-        Password = <?php echo $_POST['pwd']; ?><br>
+        <?php
+            $Login = $_POST['login'];
+            $Password = $_POST['pwd'];
+            if($Login == "admin" && $Password == "ad1234"){
+                echo "ยินดีต้อนรับคุณ ADMIN";
+            }else if($Login == "member" && $Password == "mem1234"){
+                echo "ยินดีต้อนรับคุณ MEMBER";
+            }else{
+                echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+            }
+        ?>
+        <br>
+        <a href="login.php" style="float: center;">กลับไปยังหน้าหลัก</a>
     </div>
     
 </body>
