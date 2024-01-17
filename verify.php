@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $Login = $_POST['login'];
+    $Password = $_POST['pwd'];
+    if(isset($_SESSION["id"]) || $Login == "" && $Password == ""){
+        header("location:index.php");
+        die();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +19,23 @@
     <hr>
     <div style="text-align: center;">
         <?php
-            $Login = $_POST['login'];
-            $Password = $_POST['pwd'];
+            
             if($Login == "admin" && $Password == "ad1234"){
-                echo "ยินดีต้อนรับคุณ ADMIN";
+                $_SESSION["username"] = "admin";
+                $_SESSION["role"] = "a";
+                $_SESSION["id"] = session_id();
+                echo "ยินดีต้อนรับคุณ ADMIN<br>";              
             }else if($Login == "member" && $Password == "mem1234"){
-                echo "ยินดีต้อนรับคุณ MEMBER";
+                $_SESSION["username"] = "member";
+                $_SESSION["role"] = "m";
+                $_SESSION["id"] = session_id();
+                echo "ยินดีต้อนรับคุณ MEMBER<br>";
             }else{
-                echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+                echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง<br>";
             }
         ?>
         <br>
-        <a href="login.php" style="float: center;">กลับไปยังหน้าหลัก</a>
+        <a href="index.php" style="float: center;">กลับไปยังหน้าหลัก</a>
     </div>
     
 </body>
