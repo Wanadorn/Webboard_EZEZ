@@ -22,6 +22,18 @@
         <div class="row mt-4">
             <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
             <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+                <?php
+                    if(isset($_SESSION['status_login'])){
+                        if($_SESSION['status_login']=="error"){
+                            echo "<div class='alert alert-danger'>
+                            ชื่อบัญชีซ้ำหรือฐานข้อมูลมีปัญหา</div>";
+                        }else{
+                            echo "<div class='alert alert-success'>
+                            เพิ่มบัญชีเรียบร้อยแล้ว</div>";
+                        }
+                        unset($_SESSION['status_login']);
+                    }
+                ?>
                 <div class="card border-primary">
                     <div class="card-header bg-primary text-white">เข้าสู่ระบบ</div>
                     <div class="card-body">
@@ -29,34 +41,34 @@
                             <div class="row">
                                 <label for="login" class="col-lg-3 col-form-label">ชื่อบัญชี:</label>
                                 <div class="col-lg-9">
-                                    <input id="login" type="text" name="login" class="form-control" require>
+                                    <input id="login" type="text" name="login" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label for="pwd" class="col-lg-3 col-form-label">รหัสผ่าน:</label>
                                 <div class="col-lg-9">
-                                    <input id="pwd" type="password" name="pwd" class="form-control" require>
+                                    <input id="pwd" type="password" name="pwd" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label for="name" class="col-lg-3 col-form-label">ชื่อ-นามสกุล:</label>
                                 <div class="col-lg-9">
-                                    <input id="name" type="text" name="name" class="form-control" require>
+                                    <input id="name" type="text" name="name" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <label class="col-lg-3 col-form-label">เพศ:</label>
                                 <div class="col-lg-9">
                                     <div class="form-check">
-                                        <input id="m" type="radio" name="gender" value="m" class="form-check-input" require>
+                                        <input id="m" type="radio" name="gender" value="m" class="form-check-input" required>
                                         <label for="m" class="form-check-label">ชาย</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="f" type="radio" name="gender" value="f" class="form-check-input" require>
+                                        <input id="f" type="radio" name="gender" value="f" class="form-check-input" required>
                                         <label for="f" class="form-check-label">หญิง</label>
                                     </div>
                                     <div class="form-check">
-                                        <input id="o" type="radio" name="gender" value="o" class="form-check-input" require>
+                                        <input id="o" type="radio" name="gender" value="o" class="form-check-input" required>
                                         <label for="o" class="form-check-label">อื่นๆ</label>
                                     </div>
                                 </div>
@@ -64,7 +76,7 @@
                             <div class="row mt-3">
                                 <label for="email" class="col-lg-3 col-form-label">อีเมล:</label>
                                 <div>
-                                    <input id="email" type="email" name="email" class="form-control" require>
+                                    <input id="email" type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
