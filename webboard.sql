@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2024 at 10:53 AM
+-- Generation Time: Mar 06, 2024 at 10:53 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -54,6 +54,14 @@ CREATE TABLE `comment` (
   `user_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`id`, `content`, `post_date`, `user_id`, `post_id`) VALUES
+(3, 'เล่นดีๆ', '2024-03-06 15:26:54', 4, 2),
+(4, 'เล่นโคดกาก', '2024-03-06 16:36:12', 5, 2);
 
 -- --------------------------------------------------------
 
@@ -145,7 +153,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `post`
