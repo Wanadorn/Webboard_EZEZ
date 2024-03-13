@@ -16,12 +16,23 @@
     <title>Register</title>
 </head>
 <body>
+    <script>
+        function OnblurPwd(){
+            let pwd=document.getElementById("pwd");
+            let pwd2=document.getElementById("pwd2");
+            if(pwd.value!==pwd2.value){
+                alert("รหัสทั้งสองช่องไม่ตรงกัน");
+                pwd2.value="";
+
+            }
+        }
+    </script>
     <div class="container-lg">
         <h1 style="text-align: center;" class="mt-3">Webboard Wanadorn</h1>
         <?php include "nav.php" ?>
         <div class="row mt-4">
-            <div class="col-lg-4 col-md-3 col-sm-2 col-1"></div>
-            <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+            <div class="col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-lg-6 col-md-8 col-sm-10">
                 <?php
                     if(isset($_SESSION['status_login'])){
                         if($_SESSION['status_login']=="error"){
@@ -48,6 +59,12 @@
                                 <label for="pwd" class="col-lg-3 col-form-label">รหัสผ่าน:</label>
                                 <div class="col-lg-9">
                                     <input id="pwd" type="password" name="pwd" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <label for="pwd" class="col-lg-3 col-form-label">ใส่รหัสผ่านซ้ำ:</label>
+                                <div class="col-lg-9">
+                                    <input id="pwd2" type="password" name="pwd2" onblur="OnblurPwd()" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row mt-3">
